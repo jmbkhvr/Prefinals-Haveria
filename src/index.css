@@ -1,0 +1,253 @@
+:root {
+  --bg: #f9fafc;
+  --card-bg: #fff;
+  --primary: #a8dadc;
+  --accent: #bde0fe;
+  --secondary: #fcd5ce;
+  --warning: #ffb4a2;
+  --danger: #e63946;
+  --text: #2b2d42;
+  --muted: #6c757d;
+  --border: #e6e6e6;
+  --radius: 14px;
+  --shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+  --transition: all 0.25s ease-in-out;
+  --gradient: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  background: var(--gradient);
+  color: #1d3557;
+  padding: 1.2rem 2rem;
+  box-shadow: var(--shadow);
+  border-radius: 0 0 var(--radius) var(--radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #1d3557;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.cart-badge {
+  background: var(--secondary);
+  color: #1d3557;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  margin-left: 4px;
+}
+
+.product-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  padding: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.product-card img:hover {
+  transform: scale(1.02);
+}
+
+.product-card h3 {
+  margin: 10px 0 5px 0;
+  font-size: 1.1rem;
+}
+
+.product-card .price {
+  font-weight: 600;
+  color: #1d3557;
+}
+
+.product-card button {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.low-stock {
+  background: var(--warning);
+  color: white;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.out-of-stock {
+  background: var(--danger);
+  color: white;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.cart-container {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 800px;
+}
+
+.cart-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-container th {
+  background: var(--primary);
+  color: #1d3557;
+  padding: 0.8rem;
+}
+
+.cart-container td {
+  padding: 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-container tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.cart-container tfoot {
+  background: var(--accent);
+  font-weight: 600;
+}
+
+.cart-container button {
+  margin: 0 4px;
+}
+
+form {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 2rem auto;
+  max-width: 700px;
+}
+
+form h2 {
+  text-align: center;
+  color: #1d3557;
+  margin-bottom: 1.2rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(168, 218, 220, 0.3);
+}
+
+button {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: var(--secondary);
+  color: #2b2d42;
+  font-weight: 500;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+button:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+footer {
+  margin-top: 2rem;
+  background: var(--gradient);
+  color: #1d3557;
+  text-align: center;
+  padding: 1rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
